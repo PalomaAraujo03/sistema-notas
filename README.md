@@ -1,40 +1,67 @@
-Sistema de Gerenciamento de Notas Acadêmicas
-Sistema desenvolvido em Python para registrar e acompanhar o desempenho
-acadêmico de estudantes. Permite calcular médias, verificar aprovação e
-gerar relatórios consolidados a partir de uma estrutura de lista de dicionários.
+# 🎓 Sistema de Gerenciamento de Notas Acadêmicas
 
-Funcionalidades
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Status](https://img.shields.io/badge/Status-Concluído-success)
+![License](https://img.shields.io/badge/Projeto-Educacional-orange)
 
-Armazenamento de alunos e notas em lista de dicionários
-Cálculo de média aritmética por aluno
-Verificação de aprovação com critério de corte configurável
-Geração de relatório formatado no terminal
+Sistema desenvolvido em **Python** para registrar e acompanhar o desempenho acadêmico de estudantes. O projeto permite calcular médias, verificar aprovação e gerar relatórios consolidados utilizando listas e dicionários.
 
+---
 
-Pré-requisitos
+## ✨ Funcionalidades
 
-Python 3.10 ou superior instalado
-Sem dependências externas — usa apenas a biblioteca padrão do Python
+✅ Cadastro de alunos e notas
 
-Para verificar a versão do Python instalada, execute no terminal:
-bashpython --version
+✅ Cálculo automático de médias
 
-Estrutura do projeto
+✅ Verificação de aprovação ou reprovação
+
+✅ Relatório formatado no terminal
+
+✅ Testes automatizados com `doctest`
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+* Python 3.10+
+* Biblioteca Padrão do Python
+* Doctest
+
+---
+
+## 📂 Estrutura do Projeto
+
+```text
 sistema-notas/
 │
-├── funcoes_documentadas.py   # funções principais + estrutura de dados
-├── gerar_relatorio.py        # função de relatório isolada
-└── README.md                 # este arquivo
+├── funcoes_documentadas.py
+├── gerar_relatorio.py
+└── README.md
+```
 
-Como executar o sistema
-1. Clone ou baixe o projeto
-Se estiver usando Git:
-bashgit clone https://github.com/seu-usuario/sistema-notas.git
+---
+
+## 🚀 Como Executar
+
+### 1️⃣ Clonar o repositório
+
+```bash
+git clone https://github.com/PalomaAraujo03/sistema-notas.git
 cd sistema-notas
-Ou simplesmente salve os arquivos .py em uma pasta local.
-2. Execute o arquivo principal
-bashpython funcoes_documentadas.py
-Saída esperada no terminal:
+```
+
+### 2️⃣ Executar o sistema
+
+```bash
+python funcoes_documentadas.py
+```
+
+---
+
+## 📊 Exemplo de Saída
+
+```text
 ================================================
   NOME                    MÉDIA  SITUAÇÃO
 ================================================
@@ -44,44 +71,78 @@ Saída esperada no terminal:
   Eduardo Santos           4.20  Reprovado
   Fernanda Oliveira        7.30  Aprovado
 ================================================
-3. Execute apenas o relatório
-bashpython gerar_relatorio.py
+```
 
-Como acionar os testes
-Os testes automatizados estão embutidos no arquivo principal e cobrem
-as funções calcular_media e verificar_aprovacao, incluindo casos
-normais, valores limite e critérios personalizados de corte.
-Executar os testes diretamente
-bashpython -m doctest funcoes_documentadas.py -v
-A flag -v (verbose) exibe cada teste individualmente com o resultado:
-Trying:
-    calcular_media([8.0, 6.0, 10.0])
-Expecting:
-    8.0
-ok
-...
-3 items passed all tests
-12 tests in 3 items.
-12 passed and 0 failed.
-Test passed.
-Executar sem saída detalhada
-bashpython -m doctest funcoes_documentadas.py
-Nenhuma saída significa que todos os testes passaram.
+---
 
-Configuração do critério de aprovação
-A nota mínima para aprovação está definida como constante no topo do arquivo:
-pythonMEDIA_MINIMA_APROVACAO = 7.0
-Para alterar o critério institucional, edite apenas essa linha.
-Todas as funções que dependem dessa constante serão atualizadas automaticamente.
+## 🧪 Executando os Testes
 
-Exemplo de uso programático
-pythonfrom funcoes_documentadas import calcular_media, verificar_aprovacao
+### Modo detalhado
 
-notas  = [8.5, 7.0, 9.0]
-media  = calcular_media(notas)           # 8.17
-status = verificar_aprovacao(media)      # 'Aprovado'
+```bash
+python -m doctest funcoes_documentadas.py -v
+```
 
-print(f"Média: {media} — {status}")
+### Modo resumido
 
-Padrões adotados
-ItemPadrãoLinguagemPython 3.10+Nomenclaturasnake_case (PEP 8)Documentação internaDocstrings Google StyleTestesdoctest (biblioteca padrão)EncodingUTF-8
+```bash
+python -m doctest funcoes_documentadas.py
+```
+
+✔️ Se nenhuma mensagem for exibida, todos os testes passaram com sucesso.
+
+---
+
+## ⚙️ Configuração da Aprovação
+
+A nota mínima para aprovação é definida pela constante:
+
+```python
+MEDIA_MINIMA_APROVACAO = 7.0
+```
+
+Caso deseje alterar o critério de aprovação, basta modificar esse valor.
+
+---
+
+## 💻 Exemplo de Uso
+
+```python
+from funcoes_documentadas import calcular_media, verificar_aprovacao
+
+notas = [8.5, 7.0, 9.0]
+
+media = calcular_media(notas)
+status = verificar_aprovacao(media)
+
+print(f"Média: {media:.2f} - {status}")
+```
+
+---
+
+## 📈 Boas Práticas Aplicadas
+
+| Item            | Descrição    |
+| --------------- | ------------ |
+| 🐍 Linguagem    | Python 3.10+ |
+| 📚 Documentação | Docstrings   |
+| 🧹 Convenções   | PEP 8        |
+| 🧪 Testes       | doctest      |
+| 🔤 Codificação  | UTF-8        |
+
+---
+
+## 👩‍💻 Sobre a Autora
+
+**Paloma Araújo**
+
+🎓 Estudante de Engenharia de Software
+
+💡 Interessada em desenvolvimento de sistemas, programação e tecnologia.
+
+🚀 Desenvolvendo projetos para aprimorar conhecimentos em Python, lógica de programação e boas práticas de desenvolvimento.
+
+---
+
+⭐ Se este projeto foi útil para você, considere deixar uma estrela no repositório!
+
